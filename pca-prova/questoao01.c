@@ -1,26 +1,37 @@
 #include <stdio.h>
 void main(){
 
-    int notaAluno, maiorNota, menorNota = 10, mediaParcial, mediaFinal;
+    int notaAluno, maiorNota, menorNota, mediaParcial, mediaFinal;
     int divisor = 1;
+    int i = 0;
 
     do{
         printf("Digite a sua nota final: ");
         scanf("%d",&notaAluno);
 
-        if(notaAluno > maiorNota){
+        if(i < 1 && notaAluno >= 0){
+
+            menorNota = notaAluno;
+            i++;
+
+        }
+
+        if(notaAluno > maiorNota && notaAluno >= 0){
 
             maiorNota = notaAluno;
 
         }
-        if(notaAluno < menorNota){
+        if(notaAluno < menorNota && notaAluno >= 0){
 
             menorNota = notaAluno;
 
         }
+        if(notaAluno >= 0){
 
-        mediaParcial += notaAluno;
-        mediaFinal = mediaParcial / divisor;
+            mediaParcial += notaAluno;
+            mediaFinal = mediaParcial / divisor;
+
+        }
 
         divisor++;
 

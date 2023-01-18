@@ -1,27 +1,22 @@
 #include <stdio.h>
 #include <math.h>
 
-int solicitarNumero(int numeroRealPositivo){
+float solicitarNumero(float numeroRealPositivo){
 
-    if(numeroRealPositivo == 0){
+    if(numeroRealPositivo >= 0){
 
-        return 0;
-
-    }
-    else if(numeroRealPositivo == 1){
-
-        return 1;
+        return numeroRealPositivo;
 
     }
     else{
 
-        printf("Valor fora dos valores!");
+        printf("Valor fora do intervalo!");
 
     }
 
 }
 
-float arcTan(int numeroRealX){
+float arcTan(float numeroRealX){
 
     float arcoTangente;
     int expoenteDivisor = 1;
@@ -38,17 +33,17 @@ float arcTan(int numeroRealX){
 
 void imprimirMensagem(){
 
-    int numeroReal, x;
-    float arcoTangente;
+    float numeroReal;
+    float arcoTangente, x;
 
-    printf("Digite [0] ou [1]: ");
-    scanf("%d",&numeroReal);
+    printf("Digite um numero real entre 0 e 1: ");
+    scanf("%f",&numeroReal);
 
     x = solicitarNumero(numeroReal);
     arcoTangente = arcTan(x);
 
-    printf("Numero real x: %d\n",x);
-    printf("Arco tangente de x: %.4f\n",arcoTangente);
+    printf("Numero real x: %.10f\n",x);
+    printf("Arco tangente de x: %.10f\n",arcoTangente);
 
 }
 
