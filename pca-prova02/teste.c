@@ -1,28 +1,38 @@
 #include <stdio.h>
 #include <string.h>
+
 void main(){
 
-char nomes[5][50] = {("Joao"), ("Sara"), ("Adria"), ("Mauro"), ("Sandra")};
-char prioridades[5] = {('N'), ('N'), ('S'), ('N'), ('S')};
+char nomes[5][120] = {"Joao", "Sara", "Adria", "Mauro", "Sandra"};
+char prioridades[5] = {'N', 'N', 'S', 'N', 'S'};
 
-char nome[50] = "Sara";
-char nomesPrior[5][50];
+char nome[20];
 
-int counter = 0;
+char nomesPrioridade[5][120];
 
+int contador = 0;
 
-    for(int i = 0 ; i < 5 ; i++){
-        if(strcmp(nome, nomes[i]) == 0){
-            printf("posicao %d \n", i + 1);
-        }
+printf("Digite um nome: ");
+scanf("%s", nome);
+
+for(int i = 0 ; i < 5 ; i++){
+    if(strcmp(nomes[i], nome) == 0){
+        printf("Achou o nome %s na posicao %d\n", nome, i + 1);
+
     }
-    for(int j = 0 ; j < 5 ; j++){
-        if(prioridades[j] == 'S'){
-            strcpy(nomesPrior[counter], nomes[j]);
-            counter++;
-        }
+}
+for(int j = 0 ; j < 5 ; j++){
+    if(prioridades[j] == 'S'){
+        strcpy(nomesPrioridade[contador], nomes[j]);
+        contador++;
     }
-    for(int k = 0 ; k < counter ; k++){
-        printf("%s \n", nomesPrior[k]);
-    }
+}
+
+printf("Nomes com prioridade: \n");
+
+for(int k = 0 ; k < contador ; k++){
+    printf("%s\n", nomesPrioridade[k]);
+
+}
+
 }
